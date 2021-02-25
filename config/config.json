@@ -1,0 +1,7 @@
+{
+    "data": {
+        "organization": "src/data/organizations.json",
+        "user": "src/data/users.json",
+        "ticket": "src/data/tickets.json"
+    }
+}
