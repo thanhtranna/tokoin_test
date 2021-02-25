@@ -133,7 +133,7 @@ func (r *OrganizationRepo) List(key, value string) (*entity.Organizations, error
 			}
 		}
 	default:
-		return &results, errors.New("key is invalid")
+		return &results, fmt.Errorf("key is invalid")
 	}
 
 	return &results, nil
