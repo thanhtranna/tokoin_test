@@ -26,7 +26,7 @@ const mockDataUsers = `[
     "email": "hammondgaines@flotonic.com",
     "phone": "8804-843-526",
     "signature": "Don't Worry Be Happy!",
-    "organization_id": 101,
+    "organization_id": 124,
     "tags": [
       "Tilleda",
       "Frank",
@@ -51,7 +51,7 @@ const mockDataUsers = `[
     "email": "robertsonwong@flotonic.com",
     "phone": "8685-603-206",
     "signature": "Don't Worry Be Happy!",
-    "organization_id": 102,
+    "organization_id": 125,
     "tags": [
       "Delshire",
       "Ronco",
@@ -77,7 +77,7 @@ const mockDataUsers = `[
     "email": "louisastephenson@flotonic.com",
     "phone": "9914-712-033",
     "signature": "Don't Worry Be Happy!",
-    "organization_id": 101,
+    "organization_id": 124,
     "tags": [
       "Fairhaven",
       "Kraemer",
@@ -103,7 +103,7 @@ const mockDataUsers = `[
     "email": "katharinebishop@flotonic.com",
     "phone": "9025-522-621",
     "signature": "Don't Worry Be Happy!",
-    "organization_id": 102,
+    "organization_id": 125,
     "tags": [
       "Shrewsbury",
       "Ryderwood",
@@ -167,7 +167,7 @@ func TestUserRepoListExistedRecord(t *testing.T) {
 		{"Search by existed email", SearchArgs{"email", "hammondgaines@flotonic.com"}, 1, false},
 		{"Search by existed phone", SearchArgs{"phone", "8804-843-526"}, 1, false},
 		{"Search by existed signature", SearchArgs{"signature", "Don't Worry Be Happy!"}, 4, false},
-		{"Search by existed organization_id", SearchArgs{"organization_id", "101"}, 2, false},
+		{"Search by existed organization_id", SearchArgs{"organization_id", "124"}, 2, false},
 		{"Search by existed tags", SearchArgs{"tags", "Frank"}, 1, false},
 		{"Search by existed suspended", SearchArgs{"suspended", "true"}, 1, false},
 		{"Search by existed role", SearchArgs{"role", "agent"}, 2, false},

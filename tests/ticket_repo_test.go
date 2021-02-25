@@ -22,7 +22,7 @@ const mockDataTickets = `[
     "status": "closed",
     "submitter_id": 67,
     "assignee_id": 74,
-    "organization_id": 101,
+    "organization_id": 124,
     "tags": [
       "Mississippi",
       "Marshall Islands",
@@ -45,7 +45,7 @@ const mockDataTickets = `[
     "status": "pending",
     "submitter_id": 39,
     "assignee_id": 52,
-    "organization_id": 101,
+    "organization_id": 124,
     "tags": [
       "Virginia",
       "Virgin Islands",
@@ -68,7 +68,7 @@ const mockDataTickets = `[
     "status": "hold",
     "submitter_id": 55,
     "assignee_id": 55,
-    "organization_id": 101,
+    "organization_id": 124,
     "tags": [
       "Minnesota",
       "New Jersey",
@@ -129,7 +129,7 @@ func TestTicketRepoListExistedRecord(t *testing.T) {
 		{"Search by existed status", SearchArgs{"status", "hold"}, 1, false},
 		{"Search by existed submitter_id", SearchArgs{"submitter_id", "67"}, 1, false},
 		{"Search by existed assignee_id", SearchArgs{"assignee_id", "55"}, 1, false},
-		{"Search by existed organization_id", SearchArgs{"organization_id", "101"}, 3, false},
+		{"Search by existed organization_id", SearchArgs{"organization_id", "124"}, 3, false},
 		{"Search by existed tags", SearchArgs{"tags", "Maine"}, 1, false},
 		{"Search by existed has_incidents", SearchArgs{"has_incidents", "false"}, 2, false},
 		{"Search by existed due_at", SearchArgs{"due_at", "2016-08-08T07:24:14 -10:00"}, 1, false},

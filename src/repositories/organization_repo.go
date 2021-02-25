@@ -2,7 +2,6 @@ package repositories
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"strconv"
 
@@ -67,7 +66,7 @@ func (r *OrganizationRepo) List(key, value string) (*entity.Organizations, error
 	case "_id":
 		id, err := strconv.Atoi(value)
 		if err != nil {
-			return &results, errors.New("input _id is invalid")
+			return &results, fmt.Errorf("input _id is invalid")
 		}
 		org, _ := r.Retrieve(id)
 		if org != nil {
