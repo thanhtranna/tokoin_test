@@ -18,22 +18,22 @@ var Config ConfigSchema
 
 func init() {
 	config := viper.New()
-	config.SetConfigFile(`config.json`)
+
+	// Set config file
+	config.SetConfigName("config")
 	// Set the path to look for the configurations file
-	config.AddConfigPath("./config/") // Optionally look for config in the working directory.
-	// config.AddConfigPath("../config/") // Look for config needed for tests.
-	// config.AddConfigPath("../")        // Look for config needed for tests.
+	config.AddConfigPath(".")
+	config.AddConfigPath("config/")
+	config.AddConfigPath("../config/")
+	config.AddConfigPath("../")
 
-	config.AutomaticEnv()
-
-	err := config.ReadInConfig() // Find and read the config file
-	if err != nil {              // Handle errors reading the config file
+	err := config.ReadInConfig()
+	if err != nil {
 		panic(fmt.Errorf("Fatal error config file: %s", err))
 	}
 
 	err = config.Unmarshal(&Config)
-	if err != nil { // Handle errors reading the config file
+	if err != nil {
 		panic(fmt.Errorf("Fatal error config file: %s", err))
 	}
-	// fmt.Printf("Current Config: %+v", Config)
 }

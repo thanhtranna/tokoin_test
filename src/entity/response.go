@@ -7,7 +7,7 @@ type ListResult interface {
 
 // OrganizationResponse struct
 type OrganizationResponse struct {
-	Organization
+	Organization   `json:",inline"`
 	TicketSubjects []string `json:"ticket_subjects"`
 	UserNames      []string `json:"user_names"`
 }
@@ -31,7 +31,7 @@ func (o OrganizationsResponse) Length() int {
 
 // TicketResponse struct
 type TicketResponse struct {
-	Ticket
+	Ticket           `json:",inline"`
 	AssigneeName     string `json:"assignee_name"`
 	SubmitterName    string `json:"submitter_name"`
 	OrganizationName string `json:"organization_name"`
@@ -56,7 +56,7 @@ func (o TicketsResponse) Length() int {
 
 // UserResponse struct
 type UserResponse struct {
-	User
+	User                    `json:",inline"`
 	AssigneeTicketSubjects  []string `json:"assignee_ticket_subjects"`
 	SubmittedTicketSubjects []string `json:"submitted_ticket_subjects"`
 	OrganizationName        string   `json:"organization_name"`

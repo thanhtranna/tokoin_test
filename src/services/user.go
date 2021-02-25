@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/jinzhu/copier"
-
 	"tokoin-challenge/src/entity"
 	"tokoin-challenge/src/repositories"
 )
@@ -37,7 +35,8 @@ func (s *UserService) List(key, value string) (*entity.UsersResponse, error) {
 	results := entity.UsersResponse{}
 	for _, u := range *users {
 		var rs entity.UserResponse
-		copier.Copy(&rs, &u)
+
+		rs.User = *u
 		strUID := strconv.Itoa(u.ID)
 
 		// Get assignee tickets tickets for user

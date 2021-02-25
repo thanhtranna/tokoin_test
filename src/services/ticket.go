@@ -3,8 +3,6 @@ package services
 import (
 	"fmt"
 
-	"github.com/jinzhu/copier"
-
 	"tokoin-challenge/src/entity"
 	"tokoin-challenge/src/repositories"
 )
@@ -36,7 +34,7 @@ func (s *TicketService) List(key, value string) (*entity.TicketsResponse, error)
 	results := entity.TicketsResponse{}
 	for _, ticket := range *tickets {
 		var rs entity.TicketResponse
-		copier.Copy(&rs, &ticket)
+		rs.Ticket = *ticket
 
 		// Get organization of ticket
 		org, err := s.orgRepo.Retrieve(ticket.OrganizationID)

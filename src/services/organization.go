@@ -3,8 +3,6 @@ package services
 import (
 	"strconv"
 
-	"github.com/jinzhu/copier"
-
 	"tokoin-challenge/src/entity"
 	"tokoin-challenge/src/repositories"
 )
@@ -37,7 +35,7 @@ func (s *OrgService) List(key, value string) (*entity.OrganizationsResponse, err
 	results := entity.OrganizationsResponse{}
 	for _, org := range *orgs {
 		var rs entity.OrganizationResponse
-		copier.Copy(&rs, &org)
+		rs.Organization = *org
 		strOrgID := strconv.Itoa(org.ID)
 
 		// Get tickets of organization
